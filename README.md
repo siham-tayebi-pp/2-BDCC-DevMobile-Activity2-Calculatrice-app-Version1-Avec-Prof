@@ -162,3 +162,5 @@ Y a deux type de layout:
    L’adaptateur prendra chaque élément de cette collection et l'affichera à l'aide du layout que tu as spécifié.
 
 ## AJouter un traitment qund un elt est clique via meth : lst.setOnItemClickListener
+![3_lst_default.png](images/3_lst_default.png)
+![4_app_processing.png](images/4_app_processing.png)
