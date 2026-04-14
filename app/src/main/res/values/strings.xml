@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Calculatrice app</string>
+    <string-array name="calculs_default">
+        <item>calcul1</item>
+        <item>calcul2</item>
+        <item>calcul3</item>
+        <item>calcul4</item>
+    </string-array>
 </resources>

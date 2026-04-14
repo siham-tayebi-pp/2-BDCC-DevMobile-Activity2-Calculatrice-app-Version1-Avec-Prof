@@ -9,17 +9,17 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/txtNumber"
+        android:id="@+id/idTxtNumber"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:ems="10"
         android:inputType="number"
         android:layout_marginTop="15dp"
-
+        android:background="@drawable/edit_text_style"
         android:hint="tappez ici votre nombre"/>
 
     <Button
-        android:id="@+id/btnCompute"
+        android:id="@+id/idBtnCompute"
         android:layout_width="match_parent"
         android:layout_marginTop="10dp"
         android:layout_height="wrap_content"
@@ -29,8 +29,8 @@
         android:background="@color/colorAccent"/>
 
     <TextView
-        android:id="@+id/txtRes"
-        android:layout_width="200dp"
+        android:id="@+id/idTxtRes"
+        android:layout_width="match_parent"
         android:height="40dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -38,13 +38,16 @@
         android:gravity="center"
         android:textColor="@color/red"
         android:textSize="20dp"
+        android:background="@drawable/text_view_style"
         android:textStyle="bold"
         android:textAlignment="center"
         />
 
     <ListView
-        android:id="@+id/idRes"
+        android:id="@+id/idListRes"
         android:layout_width="match_parent"
         android:layout_marginTop="10dp"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+
+        />
 </LinearLayout>

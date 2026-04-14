@@ -1,14 +1,13 @@
 # Activie dapp de calcul
 ## 1. on commence par  modifier les colors  dans colors dans values stings.xml
 
-![img1.png](images/img1.png)
+![img1.png](images/2_interface.png)
 
 ## 2. Modifier dans themes thems.xml dans folder themes
 theme:Theme.AppCompat.DayNight.DarkActionBar
 sstyle= my stayle par exple
 ```xml
-    <style name="Mystyle" parent="Theme.AppCompat.DayNight.DarkActionBar">
-
+    <style name="Mystyle" parent="Theme.AppCompat.DayNight.DarkActionBar"/>
 ```
 et ajouter les items
 ms avant on va dans colors pour ajoute rles colors.xml
@@ -47,8 +46,7 @@ et on retourne a themes.xml pour ajoutr les items
 
 ```xml
       <application
-    android:theme="@style/Mystyle">
-
+    android:theme="@style/Mystyle"/>
 ```
 
 ## 5.Creer linterface activty main dans laquel va se faire le calcul
@@ -80,3 +78,87 @@ diff entre textalignmemtn et gravity pour edit tex
 | `gravity`       | `left`      | Position **fixe**                        | 👉 Texte à gauche   | 👉 Texte à gauche    |
 | `textAlignment` | `viewEnd`   | Dépend de la direction de la langue      | 👉 Texte à droite   | 👉 Texte à gauche 🔄 |
 | `textAlignment` | `viewStart` | Dépend de la direction de la langue      | 👉 Texte à gauche   | 👉 Texte à droite 🔄 |
+-textcolor et textsize et margiintop
+- on personalize aussi des background dans drawable pour edit text et pour txt number style 
+- Creer des fich dans drawable aevc le selector selectionne
+- puis ajouter le item et dedans shape et sroke
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<item>
+    <shape android:shape="rectangle">
+        <stroke android:color="@color/red" android:width="4dp">
+            <size  android:width="40dp"/>
+        </stroke>
+    </shape>
+</item>
+</selector>
+```
+la on peut les utilsier comme des background des text view
+
+Volici la page a creer 
+
+et on les met comme ca puisque il sont dans drawable 
+```xml
+    <TextView 
+        android:background="@drawable/text_view_style"
+        android:textStyle="bold"
+        />
+```
+et voila linterface finale
+![img1.png](images/2_interface.png)
+## II. on passe au traitment cote java
+pour reccupere une elt par son id vous mettz:
+```java
+  EditText txtNumber=findViewById(R.id.idTxtNumber);
+```
+on reccupere tt nos Views de la meme maniere
+view=tout élément visible à l’écran
+Pour classe R :
+- La classe R est une classe générée automatiquement par Android.
+- Elle sert à faire le lien entre le code Java/Kotlin et les ressources XML
+
+```bash
+📦 Qu’est-ce que “ressources” ?
+
+Ce sont tous les fichiers dans :
+
+res/
+
+Exemples :
+
+- layout (activity_main.xml)
+ - images (drawable)
+  - textes (strings.xml)
+    - couleurs (colors.xml)
+    
+    ====> La classe R est une classe générée automatiquement qui permet d’accéder aux ressources de l’application.
+```
+
+
+mettre meth setOnclick listener
+### pour afficher les donnes dune source de donnees dans un list view on aurra besoin dun adapteur
+
+```text
+Un adaptateur sert de pont entre la source de données (comme une liste, un tableau, araylist, cursor, etc.) et le ListView. Il est responsable de fournir les données à afficher dans chaque ligne (ou item) du ListView.
+```
+Ladapteur prend trois parametres
+1. context : via this ou getContext()
+- Rôle : Il permet à l'adaptateur de savoir où il se trouve dans l'application.
+- Car Si l'adaptateur doit charger des ressources, comme des couleurs ou des chaînes de caractères, il a besoin de savoir dans quel contexte il travaille.
+2. layoutResrc(Layout pour chaque élément de la liste)
+- Rôle : C’est l’ID de layout XML qui définit l'apparence de chaque élément de la liste.
+- Par exemple, si tu veux que chaque élément de la liste soit simplement du texte, tu utiliseras android.R.layout.simple_list_item_1 (un layout de base qui affiche juste du texte).
+- Si tu veux personnaliser davantage l'élément, tu peux définir ton propre layout dans un fichier XML.
+Y a deux type de layout:
+- android.R.layout.simple_list_item_1 : Affiche un seul texte par élément.
+- android.R.layout.simple_list_item_2 : Affiche un texte principal et un texte secondaire.
+- android.R.layout.simple_list_item_1 : Affiche un seul texte par élément.
+  android.R.layout.simple_list_item_2 : Affiche un texte principal et un texte secondaire.
+3. data (Source des données)
+- Rôle : C’est la liste de données que tu veux afficher dans la liste.
+-  Par exemple, une arrayList, un tableau, ou n’importe quel autre type de collection qui contient les informations à afficher.
+   L’adaptateur prendra chaque élément de cette collection et l'affichera à l'aide du layout que tu as spécifié.
+
+## AJouter un traitment qund un elt est clique via meth : lst.setOnItemClickListener
