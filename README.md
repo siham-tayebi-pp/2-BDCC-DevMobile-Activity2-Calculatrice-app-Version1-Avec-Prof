@@ -63,3 +63,20 @@ et on retourne a themes.xml pour ajoutr les items
 - en met le linear layout en  vrtical
 - et dans les elts on met match_parent dans width pour quelle prenne tt largeur et on ajoute les id 
 - et on met en eux id aussi
+- attribut hint: cad placeholder
+- gravity pour alignr le contenu
+
+  | Attribut         | Sert à                                 |
+  | ---------------- | -------------------------------------- |
+  | `gravity`        | position du contenu **à l’intérieur**  |
+  | `layout_gravity` | position de la vue **dans son parent** |
+
+
+diff entre textalignmemtn et gravity pour edit tex
+
+| Attribut        | Valeur      | Comportement                             | Français (LTR) 🇫🇷 | Arabe (RTL) 🇸🇦     |
+| --------------- | ----------- | ---------------------------------------- | ------------------- | -------------------- |
+| `gravity`       | `right`     | Position **fixe** du texte dans le champ | 👉 Texte à droite   | 👉 Texte à droite    |
+| `gravity`       | `left`      | Position **fixe**                        | 👉 Texte à gauche   | 👉 Texte à gauche    |
+| `textAlignment` | `viewEnd`   | Dépend de la direction de la langue      | 👉 Texte à droite   | 👉 Texte à gauche 🔄 |
+| `textAlignment` | `viewStart` | Dépend de la direction de la langue      | 👉 Texte à gauche   | 👉 Texte à droite 🔄 |

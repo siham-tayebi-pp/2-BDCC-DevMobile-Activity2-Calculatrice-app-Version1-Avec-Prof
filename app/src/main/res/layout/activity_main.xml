@@ -13,22 +13,38 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="number" />
+        android:inputType="number"
+        android:layout_marginTop="15dp"
+
+        android:hint="tappez ici votre nombre"/>
 
     <Button
         android:id="@+id/btnCompute"
         android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
         android:layout_height="wrap_content"
-        android:text="Button" />
+
+        android:text="Compute"
+        android:textColor="@color/white"
+        android:background="@color/colorAccent"/>
 
     <TextView
         android:id="@+id/txtRes"
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
+        android:height="40dp"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_marginTop="10dp"
+        android:text="0"
+        android:gravity="center"
+        android:textColor="@color/red"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        />
 
     <ListView
         android:id="@+id/idRes"
         android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
         android:layout_height="match_parent" />
 </LinearLayout>
