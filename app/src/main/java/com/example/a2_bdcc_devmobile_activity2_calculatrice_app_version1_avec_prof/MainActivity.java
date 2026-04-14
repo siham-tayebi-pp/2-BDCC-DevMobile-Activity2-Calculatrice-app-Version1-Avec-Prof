@@ -50,13 +50,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Initialiser un nouveau adaptateur
                 ArrayAdapter<String > AA2= new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1 , data);
-
+                lst.setAdapter(AA2);
                 Double n=Double.parseDouble(txtNumber.getText().toString());
                 Double res= n*10;
                 txtRes.setText(String.valueOf(res));
                 data.add("amount"+ i+1 +" "+ n +" ===> "+res);
                 txtNumber.setText("");
-                lst.setAdapter(AA2);
+
+                AA2.notifyDataSetChanged();
 
 
             }

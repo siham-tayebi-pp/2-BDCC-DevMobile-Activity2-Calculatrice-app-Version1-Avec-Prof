@@ -164,3 +164,9 @@ Y a deux type de layout:
 ## AJouter un traitment qund un elt est clique via meth : lst.setOnItemClickListener
 ![3_lst_default.png](images/3_lst_default.png)
 ![4_app_processing.png](images/4_app_processing.png)
+### meth setAdapter et notifyAdpetrchangerd
+
+| **Méthode**                  | **Quand l'utiliser**                                                                                                         | **Que fait-elle**                                                                      |
+| ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| **`setAdapter()`**           | Lors de la **première initialisation** de l'adaptateur ou lors du **changement d'adaptateur**.                               | Associe un **nouvel adaptateur** à la vue (`ListView`, `RecyclerView`, etc.).          |
+| **`notifyDataSetChanged()`** | Quand les **données de l'adaptateur** changent (ajout, suppression, modification) et que tu veux **rafraîchir l'affichage**. | Informe l'adaptateur que les données ont changé et qu'il faut **réactualiser** la vue. |
